@@ -10,6 +10,16 @@ namespace ExcelDetect
     {
         static void Main(string[] args)
         {
+            try
+            {
+                Console.WriteLine("Detected:"+Microsoft.Win32.Registry.ClassesRoot.OpenSubKey("Excel.Application").ToString());
+                Console.Read();
+               }
+            catch(Exception e )
+            {
+                Console.WriteLine("Not Found: " + e.ToString());
+                Console.Read();
+            }
         }
     }
 }
